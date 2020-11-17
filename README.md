@@ -27,6 +27,8 @@ CyRadar: malicious site
 Threatsourcing: suspicious site 
 BlockList: suspicious site 
 CRDF: malicious site
+
+Do you want to see complete VirusTotal report on website? (y/n)
 ```
 ## Requirements
 ### Pip dependencies
