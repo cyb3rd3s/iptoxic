@@ -35,7 +35,7 @@ parser.add_argument('ip')
 parser.add_argument('days')
 args = parser.parse_args()
 
-adresa = (args.ip)
+ip = (args.ip)
 days = (args.days)
 headers = {
     'Key': Abuse_API,
@@ -45,7 +45,7 @@ headers = {
 params = (
     ('maxAgeInDays', days),
     ('verbose', ''),
-    ('ipAddress', adresa),
+    ('ipAddress', ip),
 )
 
 response_ab = requests.get('https://api.abuseipdb.com/api/v2/check', headers=headers, params=params)
@@ -69,7 +69,7 @@ else:
     print("")
 
 url = 'https://www.virustotal.com/vtapi/v2/url/report'
-params = {'apikey':VirusTotal_API,'resource':adresa} 
+params = {'apikey':VirusTotal_API,'resource':ip} 
 response_vt = requests.get(url, params=params)
 json = response_vt.json()
 
