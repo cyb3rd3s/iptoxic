@@ -14,7 +14,7 @@ Score: 100 %
 Country: China
 Domain: niaoyun.com
 ISP: Shenzhen Qianhai bird cloud computing Co. Ltd.
-Last reported reason: Nov 17 11:56:18 db sshd[26112]: User root from 103.45.102.170 not allowed because none of user's groups are listed in AllowGroups
+Last reported reason: Nov 17 11:56:18 db sshd[26112]: User root from 103.45.102.170 not allowed.
 ...
 
 -------VirusTotal------- 
