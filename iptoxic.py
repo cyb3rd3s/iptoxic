@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # Author: Roman Kulich @ 2020
 # Version: v0.0.8
 
