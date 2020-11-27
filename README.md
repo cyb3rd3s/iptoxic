@@ -1,4 +1,4 @@
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/cyb3rd3s/IPToxic?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/cyb3rd3s/IPToxic?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/cyb3rd3s/IPToxic?style=for-the-badge) ![Made For Badge](https://img.shields.io/badge/style-for--the--badge-green?logo=appveyor&style=for-the-badgehttps://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=success)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/cyb3rd3s/IPToxic?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/cyb3rd3s/IPToxic?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/cyb3rd3s/IPToxic?style=for-the-badge) ![Made For Badge](https://img.shields.io/badge/style-for--the--badge-green?logo=appveyor&style=for-the-badge?label=<LABEL>&message=<MESSAGE>&color=success)
 # IP Toxic
 IP Toxic scans your target IP with AbuseIPDB and Virus Total API.
 ## Usage
