@@ -3,34 +3,10 @@
 IP Toxic scans your target IP with AbuseIPDB and Virus Total API.
 ## Usage
 ```
-python3 iptoxic.py [Target IP] [Days]
+python3 iptoxic.py -t TARGET -d DAYS
 ```
 **Days** - How many days of history you want to check on AbuseIPDB.
-## Example of output
-```
--------AbuseIPDB------- 
-Reports for last 30 days:
-Reported: 301x
-Score: 100 %
-Country: China
-Domain: niaoyun.com
-ISP: Shenzhen Qianhai bird cloud computing Co. Ltd.
-Last reported reason: Nov 17 11:56:18 db sshd[26112]: User root from 103.45.102.170 not allowed.
-...
 
--------VirusTotal------- 
-Results: Found 5 positive from 80 tested sources.
-Reason of report: 
-EmergingThreats: malicious site 
-IPsum: malicious site 
-GreenSnow: malicious site 
-CyRadar: malicious site 
-Threatsourcing: suspicious site 
-BlockList: suspicious site 
-CRDF: malicious site
-
-Do you want to see complete VirusTotal report on website? (y/n)
-```
 ## Requirements
 ### Pip dependencies
 Necessary python dependencies should be installed with following command.
