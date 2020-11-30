@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Author: Roman Kulich @ 2020
-# Version: v0.0.8
+# Version: v0.0.9
 
 banner = ('''
   _____ _____    _______        _      
@@ -15,6 +15,7 @@ v0.0.8
 import argparse
 import requests
 import webbrowser
+import sys
 
 Abuse_API = 'YOUR API KEY'
 VirusTotal_API = 'YOUR API KEY'
@@ -31,12 +32,12 @@ TWHITE = '\033[37m'
 TRED = '\033[31m'
 
 parser = argparse.ArgumentParser()
-parser.add_argument('ip')
-parser.add_argument('days')
+parser.add_argument("-t", help="target url", dest='target')
+parser.add_argument("-d", help="days", dest='days')
 args = parser.parse_args()
+ip = args.target
+days = args.days
 
-ip = (args.ip)
-days = (args.days)
 headers = {
     'Key': Abuse_API,
     'Accept': 'application/json',
@@ -53,20 +54,25 @@ json = response_ab.json()
 
 print(banner)
 
-if str(json['data']['totalReports']) == "0":
-    print(TRED +"Sorry, this IP wasn't reported yet on AbuseIPDB.",TWHITE)
+if ip is None:
+    print(TRED + "Missing target! ==>",TWHITE + TGREEN + "Usage: python3 iptoxic.py -t TARGET -d DAYS",TWHITE)
     print("")
+    sys.exit()
 else:
-    print("")
-    print(TGREEN + "-------AbuseIPDB-------",TWHITE)
-    print(TGREEN + "Reports for last " + days + " days:")
-    print(TGREEN + "Reported:", TWHITE + str(json['data']['totalReports']) + "x")
-    print(TGREEN + "Score:", TWHITE + str(json['data']['abuseConfidenceScore']) + " %")
-    print(TGREEN + "Country:", TWHITE + str(json['data']['countryName']))
-    print(TGREEN + "Domain:", TWHITE + str(json['data']['domain']))
-    print(TGREEN + "ISP:", TWHITE + str(json['data']['isp']))
-    print(TGREEN + "Last reported reason:", TWHITE + str(json['data']['reports'][0]['comment']))
-    print("")
+    if str(json['data']['totalReports']) == "0":
+        print(TRED +"Sorry, this IP wasn't reported yet on AbuseIPDB.",TWHITE)
+        print("")
+    else:
+        print("")
+        print(TGREEN + "-------AbuseIPDB-------",TWHITE)
+        print(TGREEN + "Reports for last " + days + " days:")
+        print(TGREEN + "Reported:", TWHITE + str(json['data']['totalReports']) + "x")
+        print(TGREEN + "Score:", TWHITE + str(json['data']['abuseConfidenceScore']) + " %")
+        print(TGREEN + "Country:", TWHITE + str(json['data']['countryName']))
+        print(TGREEN + "Domain:", TWHITE + str(json['data']['domain']))
+        print(TGREEN + "ISP:", TWHITE + str(json['data']['isp']))
+        print(TGREEN + "Last reported reason:", TWHITE + str(json['data']['reports'][0]['comment']))
+        print("")
 
 url = 'https://www.virustotal.com/vtapi/v2/url/report'
 params = {'apikey':VirusTotal_API,'resource':ip} 
