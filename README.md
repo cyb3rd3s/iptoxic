@@ -7,6 +7,7 @@ IP Toxic scans your target IP with AbuseIPDB and Virus Total API.
 python3 iptoxic.py -t TARGET -d DAYS
 ```
 **Days** - How many days of history you want to check on AbuseIPDB.
+**Days** - IP of target that you want to scan.
 
 ## Requirements
 ### Pip dependencies
